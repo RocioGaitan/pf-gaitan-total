@@ -1,48 +1,13 @@
-//Array de productos
+let productos = [];
 
-const productos = [
-  {
-    id: "producto-01",
-    titulo: "Medias Azul y blancas",
-    imagen: "../img/medias-azubla.jpg",
-    precio: 1000
-  },
+fetch("../scripts/producto.json")
+ .then(response => response.json())
+ 
+ .then(data => {
+  productos = data;
+  cargarProducto(productos);
+ })
 
-  {
-    id: "producto-02",
-    titulo: "Medias Homero js",
-    imagen: "../img/frase-homero.jpg",
-    precio: 1500
-  },
-
-  {
-    id: "producto-03",
-    titulo: "Medias Grises",
-    imagen: "../img/medias-gris.jpg",
-    precio: 1200
-  },
-
-  {
-    id: "producto-04",
-    titulo: "Medias guitarras",
-    imagen: "../img/medias-guitarra.jpg",
-    precio: 2000
-  },
-
-  {
-    id: "producto-05",
-    titulo: "Medias Huellas",
-    imagen: "../img/medias-huellas.jpg",
-    precio: 1300
-  },
-  
-  {
-    id: "producto-06",
-    titulo: "Medias Pancho",
-    imagen: "../img/medias-salchichas.jpg",
-    precio: 1600
-  }
-];
 
 //DOM
 const contenedorProductos = document.getElementById("todos-los-productos");
@@ -50,11 +15,11 @@ let botonesAgregar = document.querySelectorAll(".producto-agregar");
 
 
 
-function cargarProducto() {
+function cargarProducto(productosElegidos) {
 
-  contenedorProductos.innerHTML = "";
+  /*contenedorProductos.innerHTML = "";*/
 
-  productos.forEach(producto => {
+  productosElegidos.forEach(producto => {
     const div = document.createElement("div");
     div.classList.add("producto");
     div.innerHTML = `
@@ -69,15 +34,17 @@ function cargarProducto() {
      contenedorProductos.append(div); 
   })
  
+  botonesAgregarActualizar();
 }
 
-cargarProducto();
 
- botonesAgregar = document.querySelectorAll(".producto-agregar");
+function botonesAgregarActualizar() {
+  botonesAgregar = document.querySelectorAll(".producto-agregar");
 
 botonesAgregar.forEach(boton => {
   boton.addEventListener("click", agregarAlCarrito);
 });
+}
 
 //cargar mas productos al carrito de compras
 
@@ -95,10 +62,10 @@ if(productosEnCarritoLS) {
 function agregarAlCarrito(e) {
 
  const idBoton = e.currentTarget.id;
- const productoAgregado = productos.find(productos => productos.id === idBoton);
+ const productoAgregado = productos.find(producto => producto.id === idBoton);
  
- if(productosEnCarrito.some(productos => productos.id === idBoton)) {
-   const index = productosEnCarrito.findIndex(productos => productos.id === idBoton);
+ if(productosEnCarrito.some(producto => producto.id === idBoton)) {
+   const index = productosEnCarrito.findIndex(producto => producto.id === idBoton);
    productosEnCarrito[index].cantidad++;
 } else {
    productoAgregado.cantidad = 1;
