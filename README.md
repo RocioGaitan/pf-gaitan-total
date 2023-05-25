@@ -1,5 +1,5 @@
-Para mi primera pre-entrega de javascript utilice mi proyecto final de desarrollo web, es un sitio web en donde se plasma el emprendimiento ventas de medias. 
-Para generar el simulador interactivo con el usuario empece utilizando variales que guarden datos, un prompt para pedirle el nombre al usuario y darle una bienvenida al sitio, todo dato ingresado por el usuario es mediante un prompt. 
-Para devolverle al usurio información y responder a los datos ingresados utilice alert y console.log 
-Utilice cilos, comparaciones y operadores logicos, variables const y let dependiendo el tipo de variable que necesitaba
-La funcionalidad que incluye para el usuario es realizar una selección de producto, crear una lista detallada de los productos, generar el descuento a productos y sumar cuanto es el total de la compra.
+Proyecto final
+Para generar el simulador interactivo con el usuario realice una pagina web dedicada a ventas de medias donde cree un producto.json indicando todos los productos y que es llamado medinte fetch en el main.js, aca se selecciona cada media que se quiere comprar, aparece el nombre del producto, el precio y un button agregar al carrito; en la parte superior agregue un link donde te envia al html carrrito para continuar con la compra.
+En el carrito de compras se suma el total de los precios de cada producto seleccionado, con un boton que permite eliminar el producto y otro de vaciar el carrito, agregandole otro link bajo el titulo carrito de compras que redirige a la pagina de productos permitiendole al usuario agregar otros productos si quisiera.
+Tambien tiene un html contacto que tiene un formulario en donde completando los inputs con algunos datos te permite enviar un mensaje de consulta a la pagina. Mostrando un sweet alert dos que la consulta se responde via email.
+Dentro del button comprar ahora se genera un sweet alert dos confirmando la compra. 

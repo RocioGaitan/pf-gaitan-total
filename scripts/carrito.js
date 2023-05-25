@@ -13,6 +13,8 @@ const botonVaciar = document.getElementById("carrito-vaciar");
 
 const contenedorTotal = document.getElementById("total");
 
+const botonComprar = document.getElementById("boton-comprar");
+
 
 
 //DOM
@@ -114,6 +116,18 @@ function actualizarTotal(){
   
 }
 
+
+botonComprar.addEventListener("click", compra);
+
+
+function compra() {
+    Swal.fire({
+        icon: 'success',
+        title: 'Muchas gracias por tu compra. Te enviaremos via email el detalle de la compra',
+        showConfirmButton: false,
+        timer: 1500
+      })
+}
 
 
 

@@ -1,7 +1,7 @@
 //vinculacion del formulario
 const miFormulario = document.getElementById("formulario");
 
-console.log(nombre);
+
 
 //creacion clase cliente
 class Cliente{
@@ -45,12 +45,14 @@ function validarFormulario(e) {
    console.log("Elementos que posse la consulta", clientes);
 
    swal.fire({
-    title: "Muchas gracias por tu consulta " + nombre + "estaremos respondiento tu consulta por via e-mail " + email
+    title: "Muchas gracias por tu consulta " + nombre + " .Estaremos respondiento tu consulta via e-mail: " + email
  });
 
  miFormulario.reset();
 
 }
+
+
 
 
 
